@@ -12,6 +12,7 @@
         <module>sharp-time</module>
         <module>dynamic-threadpool</module>
         <module>loadbalance</module>
+        <module>distributedmultilock</module>
     </modules>
 
     <properties>
