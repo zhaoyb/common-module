@@ -13,6 +13,7 @@
         <module>dynamic-threadpool</module>
         <module>loadbalance</module>
         <module>distributedmultilock</module>
+      <module>mongo_currentop_monitor</module>
     </modules>
 
     <properties>
