@@ -14,6 +14,7 @@
         <module>loadbalance</module>
         <module>distributedmultilock</module>
       <module>mongo_currentop_monitor</module>
+        <module>disruptor</module>
     </modules>
 
     <properties>

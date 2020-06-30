@@ -2,6 +2,15 @@
 
 该项目主要记录一些在个人工作中写的，或者开源项目看到的一些比较公共的模块或者类，这些模块和类可以作为子模块嵌入到新的项目中。
 
+
+#### disruptor 内存队列
+> disruptor是一个内存队列，相比于Java自带的ArrayBlockingQueue性能上更有优势，可用于传输日志等。<br>
+> 参考：<br>
+> https://www.cnblogs.com/pku-liuqiang/p/8544700.html <br>
+> https://www.jianshu.com/p/f0d4ff1f8ec9
+>
+
+
 #### loadbalance 负载均衡算法
 > 在做RPC框架或者网关项目，往往需要一个负载均衡算法， 该模块主要参考了[soul](https://github.com/Dromara/soul) 和[dubbo](https://github.com/apache/dubbo) 的负载均衡算法 <br>
 > soul主要实现了下面三个[算法](https://github.com/Dromara/soul/tree/master/soul-plugin/soul-plugin-divide/src/main/java/org/dromara/soul/plugin/divide/balance) ： 
