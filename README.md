@@ -4,7 +4,7 @@
 
 
 #### disruptor 内存队列
-> disruptor是一个内存队列，相比于Java自带的ArrayBlockingQueue性能上更有优势，可用于传输日志等。<br>
+> disruptor是一个内存队列，相比于Java自带的ArrayBlockingQueue性能上更有优势，可用于日志传输等。<br>
 > 参考：<br>
 > https://www.cnblogs.com/pku-liuqiang/p/8544700.html <br>
 > https://www.jianshu.com/p/f0d4ff1f8ec9

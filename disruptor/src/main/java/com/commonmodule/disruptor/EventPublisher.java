@@ -5,10 +5,10 @@ import com.lmax.disruptor.IgnoreExceptionHandler;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
-
 import java.util.concurrent.Executors;
 
 public class EventPublisher {
+
     private Disruptor<EventDataWapper> disruptor;
     private int bufferSize = 1024 * 1024;
 
@@ -20,14 +20,12 @@ public class EventPublisher {
                                     ProducerType.MULTI,
                                     new BlockingWaitStrategy());
 
-
         EventDataHandler[] handlers = new EventDataHandler[handlerSize];
         for (int i = 0; i < handlerSize; i++) {
             handlers[i] = new EventDataHandler("handlers(" + i + ")");
         }
 
-
-        // 点对点， 只有可以消费者能消费到
+        // 点对点， 只有一个消费者能消费到
         //disruptor.handleEventsWithWorkerPool(consumers);
         // 可以使用lambda
 //        disruptor.handleEventsWithWorkerPool(eventDataWapper -> {
@@ -35,8 +33,6 @@ public class EventPublisher {
 //        });
         // 发布订阅， 所有的消费者 都可以消费到
         disruptor.handleEventsWith(handlers);
-
-
         disruptor.setDefaultExceptionHandler(new IgnoreExceptionHandler());
         disruptor.start();
     }
