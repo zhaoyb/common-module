@@ -3,7 +3,7 @@
 该项目主要记录一些在个人工作中写的，或者开源项目看到的一些比较公共的模块或者类，这些模块和类可以作为子模块嵌入到新的项目中。
 
 
-#### disruptor 内存队列
+#### [disruptor 内存队列](https://github.com/zhaoyb/common-module/tree/master/disruptor)
 > disruptor是一个内存队列，相比于Java自带的ArrayBlockingQueue性能上更有优势，可用于日志传输等。<br>
 > 参考：<br>
 > https://www.cnblogs.com/pku-liuqiang/p/8544700.html <br>
@@ -11,7 +11,7 @@
 >
 
 
-#### loadbalance 负载均衡算法
+#### [loadbalance 负载均衡算法](https://github.com/zhaoyb/common-module/tree/master/loadbalance)
 > 在做RPC框架或者网关项目，往往需要一个负载均衡算法， 该模块主要参考了[soul](https://github.com/Dromara/soul) 和[dubbo](https://github.com/apache/dubbo) 的负载均衡算法 <br>
 > soul主要实现了下面三个[算法](https://github.com/Dromara/soul/tree/master/soul-plugin/soul-plugin-divide/src/main/java/org/dromara/soul/plugin/divide/balance) ： 
 >> - 一致性hash负载
@@ -30,7 +30,7 @@
 >> 性能可能不是很好，这里采用了本地缓存，然后在应用前端加了一个网关，网关根据userid来做一致性hash负载。保证同一个用户命中到同一个机器上，保证缓存的命中率。
 
 
-#### dynamic-threadpool 动态线程池
+#### [dynamic-threadpool 动态线程池](https://github.com/zhaoyb/common-module/tree/master/dynamic-threadpool)
 > Java自带的线程池运行过程是:
 >>core -> queue -> max
 >
@@ -43,7 +43,7 @@
 > 线程池队列积压任务的长度超过了总长度的70%，则触发自动扩容。
 
 
-#### DistributedMultiLock 分布式有限并发锁(python)
+#### [DistributedMultiLock 分布式有限并发锁(python)](https://github.com/zhaoyb/common-module/tree/master/distributedmultilock)
 > 现在关于分布式锁的解决方案，多是单锁，比如像借助数据库，redis, zookeeper等来实现的锁， 
 > 但在一些项目中，我们需要有限个并发，即对于一个资源，我们希望可以最多有5个请求方。比如像缓存回源控制，我们希望只有5个并发去读数据库。<br>
 > 在单机环境下，我们可以借助信号量来实现，对于分布式, 我们可以借助redis.<br>
@@ -52,7 +52,7 @@
 > 补充：在spark中，如果要重新切分partition，其实可以借助coalesce
 > 
 
-#### mongo_currentop_monitor MongoDB访问监控(python)
+#### [mongo_currentop_monitor MongoDB访问监控(python)](https://github.com/zhaoyb/common-module/tree/master/mongo_currentop_monitor)
 > mongotop 、mongostat命令可以获取表或者集合的访问情况，线上如果mongodb出现了压力，可以通过这两个命令定位问题，但是这两个命令只能从表
 > 维度或者库维度获取访问情况，如果一个表被多个业务端访问，想看看具体是由哪个业务引起的，就需要借助db.current_OP()命令，但是这个命令
 > 只是获取当前时刻的请求情况，没有办法一段时间的，该脚本就是在一个循环中不断调用db.current_OP()命令，并带有统计功能。<br>
@@ -61,7 +61,7 @@
 
 
 
-#### sharp-time 获取整点时间
+#### [sharp-time 时间对齐](https://github.com/zhaoyb/common-module/tree/master/sharp-time)
 > 在监控类或者job类的项目中，需要按照指定的间隔运行，比如在监控系统中，客户端SDK需要每隔5秒收集一次数据，如果客户端运行的开始时间并不是0秒 5秒..开头的，则服务端不是很好处理， <br>
 > sharp-time类的作用，主要是为了获取下一个整数时间<br>
 > 参考源码：spark(org.apache.spark.sql.execution.streaming.TriggerExecutor)
