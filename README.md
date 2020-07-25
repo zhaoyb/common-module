@@ -49,6 +49,7 @@
 > [参考](https://mp.weixin.qq.com/s/qb3rg_ZpcMcvyaIRsvc1fw) 为方便大家了解，我对脚本加了注释。 
 
 #### [DistributedMultiLock 分布式有限并发锁(python)](https://github.com/zhaoyb/common-module/tree/master/distributedmultilock)
+> 该模块类似于分布式限流。 <br>
 > 现在关于分布式锁的解决方案，多是单锁，比如像借助数据库，redis, zookeeper等来实现的锁， 
 > 但在一些项目中，我们需要有限个并发，即对于一个资源，我们希望可以最多有5个请求方。比如像缓存回源控制，我们希望只有5个并发去读数据库。<br>
 > 在单机环境下，我们可以借助信号量来实现，对于分布式, 我们可以借助redis.<br>
