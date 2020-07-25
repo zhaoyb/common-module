@@ -13,8 +13,9 @@
         <module>dynamic-threadpool</module>
         <module>loadbalance</module>
         <module>distributedmultilock</module>
-      <module>mongo_currentop_monitor</module>
+        <module>mongo_currentop_monitor</module>
         <module>disruptor</module>
+        <module>rate_limiter</module>
     </modules>
 
     <properties>
@@ -45,6 +46,11 @@
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>tomcat-util</artifactId>
                 <version>8.5.56</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.11</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
