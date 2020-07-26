@@ -42,13 +42,14 @@
 > 另外[美团技术团队](https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html) 会利用配置系统来动态调整线程池的配置，需要手动调整。这里实现的时候，直接通过获取Java运行时的系统状态(内存，CPU，GC等)，来判断系统是否繁忙，如果系统繁忙，并且
 > 线程池队列积压任务的长度超过了总长度的70%，则触发自动扩容。
 
-#### 分布式限流
-> 作为高可用的解决方案，限流是一种托底的手段，通过限制请求数量，保证服务站点不会资源过载，导致自身出现不可预知的一些错误。 同时可以保护后端资源。 <br>
+#### [分布式限流](https://github.com/zhaoyb/common-module/tree/master/rate_limiter)
+> 作为高可用的解决方案，限流是一种托底的手段，通过限制请求数量，保证服务站点不会资源过载导致自身出现不可预知的一些错误。同时可以保护后端资源。 <br>
 > 限流有多种，有本地限流，分布式限流， 限流算法包括令牌桶，漏铜，计数，滑动窗口 <br>
 > 这里采用基于分布式限流，存储用的是redis， 算法用的是令牌桶。 
 > [参考](https://mp.weixin.qq.com/s/qb3rg_ZpcMcvyaIRsvc1fw) 为方便大家了解，我对脚本加了注释。 
 
 #### [DistributedMultiLock 分布式有限并发锁(python)](https://github.com/zhaoyb/common-module/tree/master/distributedmultilock)
+> 该模块类似于分布式限流。 <br>
 > 现在关于分布式锁的解决方案，多是单锁，比如像借助数据库，redis, zookeeper等来实现的锁， 
 > 但在一些项目中，我们需要有限个并发，即对于一个资源，我们希望可以最多有5个请求方。比如像缓存回源控制，我们希望只有5个并发去读数据库。<br>
 > 在单机环境下，我们可以借助信号量来实现，对于分布式, 我们可以借助redis.<br>
