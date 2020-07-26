@@ -64,7 +64,7 @@
 > 只是获取当前时刻的请求情况，没有办法一段时间的，该脚本就是在一个循环中不断调用db.current_OP()命令，并带有统计功能。<br>
 > 使用pyton命令直接运行，ctrl+C结束运行，并打印报表
 
-#### timeutil时间戳
+#### [timeutil时间戳](https://github.com/zhaoyb/common-module/tree/master/timeutil)
 > Java中获取时间戳可以使用**System.currentTimeMillis()**， 这个函数会发生系统调用，如果在一个系统中，非常频繁的调用这个函数，性能上还是有损失的。 <br>
 > 所以这里参考了sentinel中滑动窗口中关于获取时间戳的代码, 该代码的逻辑是在静态初始化的时候调用一次**System.currentTimeMillis()**，之后开启一个线程，1毫秒运行一次。
 > 每次运行都是获取一次系统时间戳，赋值给一个静态变量，系统获取时间戳都是从这个静态变量中获取， 这样就可以保证，1毫秒内的只会调用**System.currentTimeMillis()**一次。 
