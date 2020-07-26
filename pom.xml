@@ -16,6 +16,7 @@
         <module>mongo_currentop_monitor</module>
         <module>disruptor</module>
         <module>rate_limiter</module>
+        <module>timeutil</module>
     </modules>
 
     <properties>
